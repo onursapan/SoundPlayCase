@@ -9,14 +9,22 @@
 /* Begin PBXBuildFile section */
 		986D3E4E29B33F0500AE5B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */; };
 		986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */; };
-		986D3E5229B33F0500AE5B92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E5129B33F0500AE5B92 /* ViewController.swift */; };
-		986D3E5529B33F0500AE5B92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986D3E5329B33F0500AE5B92 /* Main.storyboard */; };
+		986D3E5229B33F0500AE5B92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E5129B33F0500AE5B92 /* HomeViewController.swift */; };
 		986D3E5829B33F0500AE5B92 /* SoundPlayCase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E5629B33F0500AE5B92 /* SoundPlayCase.xcdatamodeld */; };
 		986D3E5A29B33F0600AE5B92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 986D3E5929B33F0600AE5B92 /* Assets.xcassets */; };
 		986D3E5D29B33F0600AE5B92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 986D3E5B29B33F0600AE5B92 /* LaunchScreen.storyboard */; };
 		986D3E6829B33F0600AE5B92 /* SoundPlayCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E6729B33F0600AE5B92 /* SoundPlayCaseTests.swift */; };
 		986D3E7229B33F0600AE5B92 /* SoundPlayCaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E7129B33F0600AE5B92 /* SoundPlayCaseUITests.swift */; };
 		986D3E7429B33F0600AE5B92 /* SoundPlayCaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E7329B33F0600AE5B92 /* SoundPlayCaseUITestsLaunchTests.swift */; };
+		986D3E8929B3455400AE5B92 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E8829B3455400AE5B92 /* TabBarViewController.swift */; };
+		986D3E8B29B3465000AE5B92 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E8A29B3465000AE5B92 /* AuthManager.swift */; };
+		986D3E8D29B3466400AE5B92 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E8C29B3466400AE5B92 /* APICaller.swift */; };
+		986D3E8F29B346E900AE5B92 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E8E29B346E900AE5B92 /* Artist.swift */; };
+		986D3E9129B346FF00AE5B92 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E9029B346FF00AE5B92 /* Playlist.swift */; };
+		986D3E9329B3470A00AE5B92 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E9229B3470A00AE5B92 /* UserProfile.swift */; };
+		986D3E9529B348CD00AE5B92 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E9429B348CD00AE5B92 /* ResultViewController.swift */; };
+		986D3E9729B348FF00AE5B92 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E9629B348FF00AE5B92 /* ArtistViewController.swift */; };
+		986D3E9929B3491000AE5B92 /* ArtistDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E9829B3491000AE5B92 /* ArtistDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +48,7 @@
 		986D3E4A29B33F0500AE5B92 /* SoundPlayCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundPlayCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		986D3E5129B33F0500AE5B92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		986D3E5429B33F0500AE5B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		986D3E5129B33F0500AE5B92 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		986D3E5729B33F0500AE5B92 /* SoundPlayCase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SoundPlayCase.xcdatamodel; sourceTree = "<group>"; };
 		986D3E5929B33F0600AE5B92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		986D3E5C29B33F0600AE5B92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +58,15 @@
 		986D3E6D29B33F0600AE5B92 /* SoundPlayCaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoundPlayCaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		986D3E7129B33F0600AE5B92 /* SoundPlayCaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayCaseUITests.swift; sourceTree = "<group>"; };
 		986D3E7329B33F0600AE5B92 /* SoundPlayCaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayCaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		986D3E8829B3455400AE5B92 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		986D3E8A29B3465000AE5B92 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		986D3E8C29B3466400AE5B92 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		986D3E8E29B346E900AE5B92 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		986D3E9029B346FF00AE5B92 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		986D3E9229B3470A00AE5B92 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		986D3E9429B348CD00AE5B92 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		986D3E9629B348FF00AE5B92 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
+		986D3E9829B3491000AE5B92 /* ArtistDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +117,12 @@
 		986D3E4C29B33F0500AE5B92 /* SoundPlayCase */ = {
 			isa = PBXGroup;
 			children = (
-				986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */,
-				986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */,
-				986D3E5129B33F0500AE5B92 /* ViewController.swift */,
-				986D3E5329B33F0500AE5B92 /* Main.storyboard */,
-				986D3E5929B33F0600AE5B92 /* Assets.xcassets */,
-				986D3E5B29B33F0600AE5B92 /* LaunchScreen.storyboard */,
+				986D3E8529B3401500AE5B92 /* Resource */,
+				986D3E8429B3400F00AE5B92 /* Manager */,
+				986D3E8029B33FBD00AE5B92 /* Model */,
+				986D3E8229B33FD200AE5B92 /* View */,
+				986D3E8129B33FC600AE5B92 /* ViewModel */,
+				986D3E8329B33FDF00AE5B92 /* Controller */,
 				986D3E5E29B33F0600AE5B92 /* Info.plist */,
 				986D3E5629B33F0500AE5B92 /* SoundPlayCase.xcdatamodeld */,
 			);
@@ -128,6 +144,78 @@
 				986D3E7329B33F0600AE5B92 /* SoundPlayCaseUITestsLaunchTests.swift */,
 			);
 			path = SoundPlayCaseUITests;
+			sourceTree = "<group>";
+		};
+		986D3E8029B33FBD00AE5B92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				986D3E8E29B346E900AE5B92 /* Artist.swift */,
+				986D3E9029B346FF00AE5B92 /* Playlist.swift */,
+				986D3E9229B3470A00AE5B92 /* UserProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		986D3E8129B33FC600AE5B92 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		986D3E8229B33FD200AE5B92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				986D3E5B29B33F0600AE5B92 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		986D3E8329B33FDF00AE5B92 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				986D3E8729B3450900AE5B92 /* Other */,
+				986D3E8629B3450400AE5B92 /* Core */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		986D3E8429B3400F00AE5B92 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				986D3E8A29B3465000AE5B92 /* AuthManager.swift */,
+				986D3E8C29B3466400AE5B92 /* APICaller.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		986D3E8529B3401500AE5B92 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				986D3E5929B33F0600AE5B92 /* Assets.xcassets */,
+				986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */,
+				986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		986D3E8629B3450400AE5B92 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				986D3E8829B3455400AE5B92 /* TabBarViewController.swift */,
+				986D3E5129B33F0500AE5B92 /* HomeViewController.swift */,
+				986D3E9429B348CD00AE5B92 /* ResultViewController.swift */,
+				986D3E9629B348FF00AE5B92 /* ArtistViewController.swift */,
+				986D3E9829B3491000AE5B92 /* ArtistDetailViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		986D3E8729B3450900AE5B92 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +324,6 @@
 			files = (
 				986D3E5D29B33F0600AE5B92 /* LaunchScreen.storyboard in Resources */,
 				986D3E5A29B33F0600AE5B92 /* Assets.xcassets in Resources */,
-				986D3E5529B33F0500AE5B92 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +348,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				986D3E5229B33F0500AE5B92 /* ViewController.swift in Sources */,
+				986D3E5229B33F0500AE5B92 /* HomeViewController.swift in Sources */,
+				986D3E8B29B3465000AE5B92 /* AuthManager.swift in Sources */,
+				986D3E9329B3470A00AE5B92 /* UserProfile.swift in Sources */,
+				986D3E9129B346FF00AE5B92 /* Playlist.swift in Sources */,
 				986D3E5829B33F0500AE5B92 /* SoundPlayCase.xcdatamodeld in Sources */,
+				986D3E8D29B3466400AE5B92 /* APICaller.swift in Sources */,
 				986D3E4E29B33F0500AE5B92 /* AppDelegate.swift in Sources */,
+				986D3E8F29B346E900AE5B92 /* Artist.swift in Sources */,
+				986D3E8929B3455400AE5B92 /* TabBarViewController.swift in Sources */,
+				986D3E9929B3491000AE5B92 /* ArtistDetailViewController.swift in Sources */,
 				986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */,
+				986D3E9529B348CD00AE5B92 /* ResultViewController.swift in Sources */,
+				986D3E9729B348FF00AE5B92 /* ArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +397,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		986D3E5329B33F0500AE5B92 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				986D3E5429B33F0500AE5B92 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		986D3E5B29B33F0600AE5B92 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +534,6 @@
 				INFOPLIST_FILE = SoundPlayCase/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +561,6 @@
 				INFOPLIST_FILE = SoundPlayCase/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
