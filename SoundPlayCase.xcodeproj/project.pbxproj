@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9842C0D429B6851B00B31901 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9842C0D329B6851B00B31901 /* HomeViewModel.swift */; };
 		986D3E4E29B33F0500AE5B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */; };
 		986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */; };
 		986D3E5229B33F0500AE5B92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E5129B33F0500AE5B92 /* HomeViewController.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9842C0D329B6851B00B31901 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		986D3E4A29B33F0500AE5B92 /* SoundPlayCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundPlayCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		986D3E8129B33FC600AE5B92 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9842C0D329B6851B00B31901 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				986D3E4E29B33F0500AE5B92 /* AppDelegate.swift in Sources */,
 				986D3E8F29B346E900AE5B92 /* Artist.swift in Sources */,
 				986D3E8929B3455400AE5B92 /* TabBarViewController.swift in Sources */,
+				9842C0D429B6851B00B31901 /* HomeViewModel.swift in Sources */,
 				986D3E9929B3491000AE5B92 /* ArtistDetailViewController.swift in Sources */,
 				986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */,
 				986D3E9529B348CD00AE5B92 /* ResultViewController.swift in Sources */,
