@@ -33,6 +33,8 @@
 		98A72F5329B7AA4D00DAFEF0 /* SoundPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5229B7AA4D00DAFEF0 /* SoundPlay.swift */; };
 		98A72F5529B7AB7400DAFEF0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5429B7AB7400DAFEF0 /* CoreDataStack.swift */; };
 		98A72F5729B7AEEC00DAFEF0 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5629B7AEEC00DAFEF0 /* DataProvider.swift */; };
+		98A72F5A29B7EAF000DAFEF0 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5929B7EAF000DAFEF0 /* BaseViewModel.swift */; };
+		98A72F5C29B7EAFC00DAFEF0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5B29B7EAFC00DAFEF0 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		98A72F5229B7AA4D00DAFEF0 /* SoundPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlay.swift; sourceTree = "<group>"; };
 		98A72F5429B7AB7400DAFEF0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		98A72F5629B7AEEC00DAFEF0 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		98A72F5929B7EAF000DAFEF0 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		98A72F5B29B7EAFC00DAFEF0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		986D3E4C29B33F0500AE5B92 /* SoundPlayCase */ = {
 			isa = PBXGroup;
 			children = (
+				98A72F5829B7EAC500DAFEF0 /* Base */,
 				986A270529B774A3006DDDA6 /* SoundPlay */,
 				986D3E8529B3401500AE5B92 /* Resource */,
 				986D3E8429B3400F00AE5B92 /* Manager */,
@@ -263,6 +268,15 @@
 			children = (
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		98A72F5829B7EAC500DAFEF0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				98A72F5929B7EAF000DAFEF0 /* BaseViewModel.swift */,
+				98A72F5B29B7EAFC00DAFEF0 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,10 +428,12 @@
 				9842C0E029B738C100B31901 /* ForwardButtonDelegate.swift in Sources */,
 				9842C0D429B6851B00B31901 /* HomeViewModel.swift in Sources */,
 				98A72F5329B7AA4D00DAFEF0 /* SoundPlay.swift in Sources */,
+				98A72F5C29B7EAFC00DAFEF0 /* BaseViewController.swift in Sources */,
 				9842C0DB29B7365E00B31901 /* SongfInfoCell.swift in Sources */,
 				986D3E9929B3491000AE5B92 /* ArtistDetailViewController.swift in Sources */,
 				98A72F5529B7AB7400DAFEF0 /* CoreDataStack.swift in Sources */,
 				986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */,
+				98A72F5A29B7EAF000DAFEF0 /* BaseViewModel.swift in Sources */,
 				986D3E9529B348CD00AE5B92 /* ResultViewController.swift in Sources */,
 				986D3E9729B348FF00AE5B92 /* ArtistViewController.swift in Sources */,
 				9842C0DD29B7378500B31901 /* ForwardButton.swift in Sources */,

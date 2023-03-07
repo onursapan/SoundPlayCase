@@ -9,12 +9,8 @@ import Foundation
 import CoreData
 import UIKit
 
-class HomeViewModel{
+class HomeViewModel: BaseViewModel{
     
-    var dataProvider: DataProvider = {
-        DataProvider(persistentContainer: (UIApplication.shared.delegate as! AppDelegate).persistentContainer)
-    }()
-
     var onDataLoaded: (() -> Void)?
     var onErrorReceived: ( (Error) -> Void)?
     

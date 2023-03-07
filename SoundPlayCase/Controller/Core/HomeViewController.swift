@@ -8,29 +8,8 @@
 import UIKit
 import CoreData
 
-class HomeViewController: UIViewController {
-    
-    lazy var fetchedResultsController: NSFetchedResultsController<SoundPlay> = {
-        let fetchRequest = NSFetchRequest<SoundPlay>(entityName:"SoundPlay")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "trackId", ascending:true)]
+class HomeViewController: BaseViewController<HomeViewModel> {
         
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
-                                                    managedObjectContext: viewModel.dataProvider.viewContext,
-                                                    sectionNameKeyPath: nil, cacheName: nil)
-        controller.delegate = self
-        
-        do {
-            try controller.performFetch()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
-        
-        return controller
-    }()
-    
-    var viewModel: HomeViewModel = HomeViewModel.init()
-    
     private lazy var artistTableView: UITableView = {
         let tableView = UITableView.init()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +37,7 @@ class HomeViewController: UIViewController {
         setupUI()
         configureUI()
         configureBindings()
-        viewModel.viewDidLoad()
+        viewModel?.viewDidLoad()
     }
     
     private func setupUI() {
@@ -80,7 +59,7 @@ class HomeViewController: UIViewController {
     }
     
     private func configureBindings() {
-        viewModel.onDataLoaded = {[weak self] in
+        viewModel?.onDataLoaded = {[weak self] in
             DispatchQueue.main.async {
                 self?.artistTableView.reloadData()
                 self?.hideIndicator()
@@ -102,6 +81,14 @@ class HomeViewController: UIViewController {
         indicatorView.stopAnimating()
         indicatorView.isHidden = true
     }
+    
+    override func onDataChanged() {
+        DispatchQueue.main.async {
+            self.hideIndicator()
+            self.artistTableView.isHidden = false
+            self.artistTableView.reloadData()
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
@@ -122,13 +109,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     }
 }
 
-extension HomeViewController: NSFetchedResultsControllerDelegate {
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        DispatchQueue.main.async {
-            self.hideIndicator()
-            self.artistTableView.isHidden = false
-            self.artistTableView.reloadData()
-        }
-    }
-}
+

@@ -27,6 +27,7 @@ extension TabBarViewController {
         UITabBar.appearance().backgroundColor = .systemGray
         
         let vc1 = HomeViewController()
+        vc1.viewModel = HomeViewModel.init()
         let vc2 = ResultViewController()
         let vc3 = ArtistViewController()
         let vc4 = ArtistDetailViewController()
