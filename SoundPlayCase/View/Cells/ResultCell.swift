@@ -37,13 +37,13 @@ class ResultCell: UITableViewCell{
         return stackView
     }()
     
-    var onClickedCell: ((Result)->())?
+    var onClickedCell: ((SoundPlay)->())?
         
     private let contentVerticalPadding: CGFloat = 12.0
     private let contentHorizontalPadding: CGFloat = 8.0
     private let imageSize: CGFloat = 30.0
     
-    var song: Result?
+    var song: SoundPlay?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -80,7 +80,7 @@ class ResultCell: UITableViewCell{
         contentVStackView.addArrangedSubview(trackNameLabel)
     }
     
-    public func configureCell(song: Result){
+    public func configureCell(song: SoundPlay){
         self.song = song
         artistNameLabel.text = song.artistName
         trackNameLabel.text = song.trackName

@@ -14,6 +14,8 @@ class HomeViewModel: BaseViewModel{
     var onDataLoaded: (() -> Void)?
     var onErrorReceived: ( (Error) -> Void)?
     
+    var result: Artist?
+    
     var pageLimit: Int = 20
     var page: Int = 1
         

@@ -7,12 +7,10 @@
 
 import UIKit
 
-class ArtistViewController : UIViewController {
+class ArtistViewController : BaseViewController<HomeViewModel> {
     
     var myCollectionView:UICollectionView?
-    
-    var viewModel: HomeViewModel = HomeViewModel.init()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,17 +54,14 @@ extension ArtistViewController {
 
 extension ArtistViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let detailCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistCell", for: indexPath) as! ArtistCell
-        if let model = viewModel.getDataWithIndexpath(indexpath: indexPath){
-            detailCell.configureCell(song: model)
-        }
-            return detailCell
+        let model = fetchedResultsController.object(at: indexPath)
+        detailCell.configureCell(song: model)
+        return detailCell
     }
-    
-    
 }
 

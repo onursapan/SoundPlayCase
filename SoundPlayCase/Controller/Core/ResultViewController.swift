@@ -7,10 +7,8 @@
 
 import UIKit
 
-class ResultViewController: UIViewController {
-    
-    var viewModel: HomeViewModel = HomeViewModel.init()
-    
+class ResultViewController: BaseViewController<HomeViewModel> {
+        
     private lazy var trackCountResultLabel: UILabel = {
         let label = UILabel.init()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,8 +41,7 @@ class ResultViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupUI()
         configureUI()
-        configureBindings()
-        viewModel.viewDidLoad()
+        viewModel?.viewDidLoad()
     }
     
     private func setupUI() {
@@ -71,21 +68,6 @@ class ResultViewController: UIViewController {
         artistTableView.dataSource = self
     }
     
-    private func configureBindings() {
-        viewModel.onDataLoaded = {[weak self] in
-            DispatchQueue.main.async {
-                self?.artistTableView.reloadData()
-                self?.hideIndicator()
-                self?.artistTableView.isHidden = false
-                if let result = self?.viewModel.result?.results?.count {
-                    self?.trackCountResultLabel.text = "\(result) adet sonuç bulundu."
-                } else {
-                    self?.trackCountResultLabel.text = "0 adet sonuç bulundu."
-                }
-            }
-        }
-    }
-    
     private func showIndicator() {
         view.addSubview(indicatorView)
         NSLayoutConstraint.activate([
@@ -99,6 +81,28 @@ class ResultViewController: UIViewController {
         indicatorView.stopAnimating()
         indicatorView.isHidden = true
     }
+    
+    override func onDataChanged() {
+        
+        DispatchQueue.main.async {
+            self.hideIndicator()
+            self.artistTableView.isHidden = false
+            self.artistTableView.reloadData()
+            let result = self.viewModel?.result?.results?.count ?? 0
+            self.trackCountResultLabel.text = "\(result) adet sonuç bulundu."
+        }
+        
+//        DispatchQueue.main.async {
+//            self.hideIndicator()
+//            self.artistTableView.reloadData()
+//            self.artistTableView.isHidden = false
+//            if let result =  {
+//                self.trackCountResultLabel.text = "\(result) adet sonuç bulundu."
+//            } else {
+//
+//            }
+//        }
+    }
 }
 
 extension ResultViewController: UITableViewDelegate, UITableViewDataSource{
@@ -108,14 +112,13 @@ extension ResultViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.result?.results?.count ?? 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ResultCell
-        if let model = viewModel.getDataWithIndexpath(indexpath: indexPath){
-            cell.configureCell(song: model)
-        }
+        let model = fetchedResultsController.object(at: indexPath)
+        cell.configureCell(song: model)
         cell.selectionStyle = .none
         cell.onClickedCell = {[weak self] song in
             print(song.artistName)

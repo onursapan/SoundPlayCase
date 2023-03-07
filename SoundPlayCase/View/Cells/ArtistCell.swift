@@ -41,13 +41,13 @@ class ArtistCell: UICollectionViewCell{
         return stackView
     }()
     
-    var onClickedCell: ((Result)->())?
+    var onClickedCell: ((SoundPlay)->())?
         
     private let contentVerticalPadding: CGFloat = 12.0
     private let contentHorizontalPadding: CGFloat = 16.0
     private let imageSize: CGFloat = 30.0
     
-    var song: Result?
+    var song: SoundPlay?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -87,13 +87,12 @@ class ArtistCell: UICollectionViewCell{
         trackNameLabel.text = "asdsadasdasda"
     }
     
-    public func configureCell(song: Result){
+    public func configureCell(song: SoundPlay){
         self.song = song
         artistNameLabel.text = song.artistName
         trackNameLabel.text = song.trackName
     }
 }
-
 
 extension ArtistCell: ForwardButtonDelegate{
     func onClickToForward(button: ForwardButton) {

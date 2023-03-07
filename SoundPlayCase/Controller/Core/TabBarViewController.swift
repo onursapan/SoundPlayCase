@@ -29,8 +29,11 @@ extension TabBarViewController {
         let vc1 = HomeViewController()
         vc1.viewModel = HomeViewModel.init()
         let vc2 = ResultViewController()
+        vc2.viewModel = HomeViewModel.init()
         let vc3 = ArtistViewController()
+        vc3.viewModel = HomeViewModel.init()
         let vc4 = ArtistDetailViewController()
+        vc4.viewModel = HomeViewModel.init()
         
         vc1.title = "Browse"
         vc2.title = "Search"

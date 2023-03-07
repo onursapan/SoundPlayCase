@@ -71,13 +71,13 @@ class ArtistDetailCell: UICollectionViewCell{
         return stackView
     }()
     
-    var onClickedCell: ((Result)->())?
+    var onClickedCell: ((SoundPlay)->())?
         
     private let contentVerticalPadding: CGFloat = 12.0
     private let contentHorizontalPadding: CGFloat = 8.0
     private let spacingBetweenImageAndContent: CGFloat = 5.0
     
-    var song: Result?
+    var song: SoundPlay?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -148,13 +148,13 @@ class ArtistDetailCell: UICollectionViewCell{
         contentVStackView.addArrangedSubview(trackPriceLabel)
     }
     
-    public func configureCell(song: Result){
+    public func configureCell(song: SoundPlay){
         self.song = song
         artistNameLabel.text = song.artistName
         trackNameLabel.text = song.trackName
         releaseTrackDateLabel.text = song.releaseDate
-        trackPriceLabel.text = String(describing: song.trackPrice)
-        if let urlStr = song.artworkUrl100, let url = URL.init(string: urlStr){
+//        trackPriceLabel.text = String(describing: song.trackPrice)
+        if let urlStr = song.albumImage, let url = URL.init(string: urlStr){
             artWorkImageView.kf.setImage(with: url)
         }
     }
