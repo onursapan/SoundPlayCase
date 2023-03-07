@@ -6,14 +6,37 @@
 //
 
 import UIKit
+import CoreData
 
 class HomeViewController: UIViewController {
     
+    lazy var fetchedResultsController: NSFetchedResultsController<SoundPlay> = {
+        let fetchRequest = NSFetchRequest<SoundPlay>(entityName:"SoundPlay")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "trackId", ascending:true)]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest,
+                                                    managedObjectContext: viewModel.dataProvider.viewContext,
+                                                    sectionNameKeyPath: nil, cacheName: nil)
+        controller.delegate = self
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+        }
+        
+        return controller
+    }()
+    
     var viewModel: HomeViewModel = HomeViewModel.init()
+    
     private lazy var artistTableView: UITableView = {
         let tableView = UITableView.init()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.rowHeight = 90.0
         tableView.isHidden = true
+        tableView.isUserInteractionEnabled = true
         return tableView
     }()
     
@@ -45,8 +68,8 @@ class HomeViewController: UIViewController {
         NSLayoutConstraint.activate([
             artistTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: tableViewContentPadding),
             artistTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -tableViewContentPadding),
-            artistTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: tableViewContentPadding),
-            artistTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: tableViewContentPadding)
+            artistTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: tableViewContentPadding),
+            artistTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: tableViewContentPadding)
         ])
     }
     
@@ -83,23 +106,29 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.result?.results?.count ?? 0
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SongfInfoCell
-        if let model = viewModel.getDataWithIndexpath(indexpath: indexPath){
-            cell.configureCell(song: model)
-        }
+        let model = fetchedResultsController.object(at: indexPath)
+        cell.configureCell(song: model)
         cell.selectionStyle = .none
         cell.onClickedCell = {[weak self] song in
-            print(song.artistName)
+            print(song.trackId ?? 0)
         }
         return cell
+    }
+}
+
+extension HomeViewController: NSFetchedResultsControllerDelegate {
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        DispatchQueue.main.async {
+            self.hideIndicator()
+            self.artistTableView.isHidden = false
+            self.artistTableView.reloadData()
+        }
     }
 }

@@ -6,52 +6,31 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class HomeViewModel{
     
+    var dataProvider: DataProvider = {
+        DataProvider(persistentContainer: (UIApplication.shared.delegate as! AppDelegate).persistentContainer)
+    }()
+
     var onDataLoaded: (() -> Void)?
     var onErrorReceived: ( (Error) -> Void)?
     
     var pageLimit: Int = 20
-    var offset: Int = 0
-    
-    var result: Artist?
-    
-    var resultList: [Result] = .init()
-    
-    func viewDidLoad(){
-        fetchData()
-    }
-    
-    func fetchData(shouldGetNextPage: Bool = false){
-        offset = shouldGetNextPage ? offset + 1 : offset
+    var page: Int = 1
         
-        let url = URL(string: "https://itunes.apple.com/search?term=jack+johnson&limit=\(pageLimit)&offset=\(offset)")!
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                self.onErrorReceived?(error!)
-                print("Error: \(error?.localizedDescription ?? "Unknow Error")")
-                return
-            }
-            
-            do {
-                let response = try JSONDecoder().decode(Artist.self, from: data)
-                self.result = response
-                self.resultList += response.results ?? []
-                self.onDataLoaded?()
-            } catch {
-                self.onErrorReceived?(error)
-                print("Error: \(error.localizedDescription)")
-            }
-        }
-        task.resume()
+    var requiredCount: Int {
+        pageLimit * page
+    }
+        
+    func viewDidLoad(){
+        getData()
     }
     
-    func getDataWithIndexpath(indexpath: IndexPath) -> Result? {
-        if result?.results?.count ?? 0 >= indexpath.row, let model = result?.results?[indexpath.row]{
-            return model
-        }
-        return nil
+    func getData(){
+        dataProvider.fetchSounds(pageLimit: requiredCount, errorHandler: {[weak self] _ in
+        })
     }
 }
