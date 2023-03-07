@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FFA505EC-91D3-4D65-9482-35BD0562EAE4"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "56B0E409-27FB-4794-92D5-9F72E97AB3B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoundPlayCase/View/cells/SongfInfoCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "onClickToForward(button:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "56B0E409-27FB-4794-92D5-9F72E97AB3B0 - 853480fef35a419f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SoundPlayCase.SongfInfoCell.onClickToForward(button: SoundPlayCase.ForwardButton) -&gt; ()"
+                  moduleName = "SoundPlayCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onursapan/Documents/GitHub/SoundPlayCase/SoundPlayCase/View/cells/SongfInfoCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "56B0E409-27FB-4794-92D5-9F72E97AB3B0 - 853480fef35a419f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SoundPlayCase.SongfInfoCell.onClickToForward(button: SoundPlayCase.ForwardButton) -&gt; ()"
+                  moduleName = "SoundPlayCase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/onursapan/Documents/GitHub/SoundPlayCase/SoundPlayCase/View/cells/SongfInfoCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "111"
+                  endingLineNumber = "111"
+                  offsetFromSymbolStart = "124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A8F9103-AED4-4355-9523-245A4D06CD15"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoundPlayCase/View/ForwardButton/ForwardButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "onClickedContent()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE7CAA60-42A5-4241-8EC6-31FE66EFF813"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoundPlayCase/View/ForwardButton/ForwardButton.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "setupRecognizers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

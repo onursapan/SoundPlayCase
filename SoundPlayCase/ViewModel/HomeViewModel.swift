@@ -17,6 +17,8 @@ class HomeViewModel{
     
     var result: Artist?
     
+    var resultList: [Result] = .init()
+    
     func viewDidLoad(){
         fetchData()
     }
@@ -36,6 +38,7 @@ class HomeViewModel{
             do {
                 let response = try JSONDecoder().decode(Artist.self, from: data)
                 self.result = response
+                self.resultList += response.results ?? []
                 self.onDataLoaded?()
             } catch {
                 self.onErrorReceived?(error)
@@ -43,5 +46,12 @@ class HomeViewModel{
             }
         }
         task.resume()
+    }
+    
+    func getDataWithIndexpath(indexpath: IndexPath) -> Result? {
+        if result?.results?.count ?? 0 >= indexpath.row, let model = result?.results?[indexpath.row]{
+            return model
+        }
+        return nil
     }
 }

@@ -13,10 +13,11 @@ class ForwardButton: UIView{
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView.init()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage.init(systemName: "arrowshape.turn.up.forward.fill")
         return imageView
     }()
     
-    private let iconSize: CGFloat = 50.0
+    private let iconSize: CGFloat = 15.0
     
     weak var delegate: ForwardButtonDelegate?
     
@@ -31,6 +32,10 @@ class ForwardButton: UIView{
     }
     
     private func setupUI(){
+        layer.cornerRadius = 5
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.gray.cgColor
+        
         addSubview(iconImageView)
         
         NSLayoutConstraint.activate([
@@ -43,6 +48,7 @@ class ForwardButton: UIView{
     
     private func setupRecognizers(){
         let recognizer = UITapGestureRecognizer.init(target: self, action: #selector(onClickedContent))
+        isUserInteractionEnabled = true
         addGestureRecognizer(recognizer)
     }
     
