@@ -12,6 +12,18 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTabBar()
+        
+    }
+
+}
+
+//MARK: Navigation Bar Configuration
+
+extension TabBarViewController {
+    
+    private func setupTabBar() {
+        
         UITabBar.appearance().backgroundColor = .systemGray
         
         let vc1 = HomeViewController()
@@ -46,7 +58,5 @@ class TabBarViewController: UITabBarController {
         
         setViewControllers([nav1,nav2,nav3,nav4], animated: false)
     }
-    
-
 }
 

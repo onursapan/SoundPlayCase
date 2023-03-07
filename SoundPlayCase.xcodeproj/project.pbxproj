@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9842C0D429B6851B00B31901 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9842C0D329B6851B00B31901 /* HomeViewModel.swift */; };
+		9842C0DB29B7365E00B31901 /* SongfInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9842C0DA29B7365E00B31901 /* SongfInfoCell.swift */; };
+		9842C0DD29B7378500B31901 /* ForwardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9842C0DC29B7378500B31901 /* ForwardButton.swift */; };
+		9842C0E029B738C100B31901 /* ForwardButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9842C0DF29B738C100B31901 /* ForwardButtonDelegate.swift */; };
 		986D3E4E29B33F0500AE5B92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */; };
 		986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */; };
 		986D3E5229B33F0500AE5B92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986D3E5129B33F0500AE5B92 /* HomeViewController.swift */; };
@@ -47,6 +50,9 @@
 
 /* Begin PBXFileReference section */
 		9842C0D329B6851B00B31901 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9842C0DA29B7365E00B31901 /* SongfInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongfInfoCell.swift; sourceTree = "<group>"; };
+		9842C0DC29B7378500B31901 /* ForwardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardButton.swift; sourceTree = "<group>"; };
+		9842C0DF29B738C100B31901 /* ForwardButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardButtonDelegate.swift; sourceTree = "<group>"; };
 		986D3E4A29B33F0500AE5B92 /* SoundPlayCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundPlayCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		986D3E4D29B33F0500AE5B92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		986D3E4F29B33F0500AE5B92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +102,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9842C0D929B735E300B31901 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				9842C0DA29B7365E00B31901 /* SongfInfoCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		9842C0DE29B738A500B31901 /* ForwardButton */ = {
+			isa = PBXGroup;
+			children = (
+				9842C0DC29B7378500B31901 /* ForwardButton.swift */,
+				9842C0DF29B738C100B31901 /* ForwardButtonDelegate.swift */,
+			);
+			path = ForwardButton;
+			sourceTree = "<group>";
+		};
 		986D3E4129B33F0500AE5B92 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +192,8 @@
 		986D3E8229B33FD200AE5B92 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9842C0DE29B738A500B31901 /* ForwardButton */,
+				9842C0D929B735E300B31901 /* cells */,
 				986D3E5B29B33F0600AE5B92 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -360,11 +385,14 @@
 				986D3E4E29B33F0500AE5B92 /* AppDelegate.swift in Sources */,
 				986D3E8F29B346E900AE5B92 /* Artist.swift in Sources */,
 				986D3E8929B3455400AE5B92 /* TabBarViewController.swift in Sources */,
+				9842C0E029B738C100B31901 /* ForwardButtonDelegate.swift in Sources */,
 				9842C0D429B6851B00B31901 /* HomeViewModel.swift in Sources */,
+				9842C0DB29B7365E00B31901 /* SongfInfoCell.swift in Sources */,
 				986D3E9929B3491000AE5B92 /* ArtistDetailViewController.swift in Sources */,
 				986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */,
 				986D3E9529B348CD00AE5B92 /* ResultViewController.swift in Sources */,
 				986D3E9729B348FF00AE5B92 /* ArtistViewController.swift in Sources */,
+				9842C0DD29B7378500B31901 /* ForwardButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
