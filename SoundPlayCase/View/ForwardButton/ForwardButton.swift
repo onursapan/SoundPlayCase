@@ -13,6 +13,7 @@ class ForwardButton: UIView{
     private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView.init()
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
         imageView.image = UIImage.init(systemName: "arrowshape.turn.up.forward.fill")
         return imageView
     }()
@@ -24,7 +25,7 @@ class ForwardButton: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        setupRecognizers()
+        configureRecognizers()
     }
     
     required init?(coder: NSCoder) {
@@ -46,14 +47,13 @@ class ForwardButton: UIView{
         ])
     }
     
-    private func setupRecognizers(){
-        let recognizer = UITapGestureRecognizer.init(target: self, action: #selector(onClickedContent))
-        isUserInteractionEnabled = true
+    private func configureRecognizers(){
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.onClickedContent(_:)))
         addGestureRecognizer(recognizer)
     }
     
     @objc
-    func onClickedContent(){
+    func onClickedContent(_ recognizer: UITapGestureRecognizer){
         delegate?.onClickToForward(button: self)
     }
 }

@@ -43,14 +43,23 @@ class SongfInfoCell: UITableViewCell{
         return stackView
     }()
     
-    var onClickedCell: ((Result)->())?
+    private lazy var cellContentView: UIView = {
+        let view = UIView.init()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 5
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.gray.cgColor
+        return view
+    }()
+    
+    var onClickedCell: ((SoundPlay)->())?
         
     private let contentVerticalPadding: CGFloat = 12.0
     private let contentHorizontalPadding: CGFloat = 8.0
     private let imageSize: CGFloat = 30.0
     private let spacingBetweenImageAndContent: CGFloat = 5.0
     
-    var song: Result?
+    var song: SoundPlay?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -62,32 +71,36 @@ class SongfInfoCell: UITableViewCell{
     }
     
     func setupUI(){
-        layer.cornerRadius = 5
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.gray.cgColor
-        
-        addSubview(artWorkImageView)
+        contentView.addSubview(cellContentView)
         NSLayoutConstraint.activate([
-            artWorkImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: contentHorizontalPadding),
-            artWorkImageView.topAnchor.constraint(equalTo: topAnchor, constant: contentVerticalPadding),
-            artWorkImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -contentVerticalPadding),
+            cellContentView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            cellContentView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            cellContentView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            cellContentView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -contentVerticalPadding)
+        ])
+        
+        cellContentView.addSubview(artWorkImageView)
+        NSLayoutConstraint.activate([
+            artWorkImageView.leadingAnchor.constraint(equalTo: cellContentView.leadingAnchor, constant: contentHorizontalPadding),
+            artWorkImageView.topAnchor.constraint(equalTo: cellContentView.topAnchor, constant: contentVerticalPadding),
+            artWorkImageView.bottomAnchor.constraint(equalTo: cellContentView.bottomAnchor, constant: -contentVerticalPadding),
             artWorkImageView.widthAnchor.constraint(equalTo: artWorkImageView.heightAnchor)
         ])
         
-        addSubview(forwardButton)
+        cellContentView.addSubview(forwardButton)
         
         NSLayoutConstraint.activate([
-            forwardButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -contentHorizontalPadding),
-            forwardButton.topAnchor.constraint(equalTo: topAnchor, constant: contentVerticalPadding),
-            forwardButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -contentVerticalPadding),
+            forwardButton.trailingAnchor.constraint(equalTo: cellContentView.trailingAnchor, constant: -contentHorizontalPadding),
+            forwardButton.topAnchor.constraint(equalTo: cellContentView.topAnchor, constant: contentVerticalPadding),
+            forwardButton.bottomAnchor.constraint(equalTo: cellContentView.bottomAnchor, constant: -contentVerticalPadding),
             forwardButton.widthAnchor.constraint(equalTo: forwardButton.heightAnchor)
         ])
         
-        addSubview(contentVStackView)
+        cellContentView.addSubview(contentVStackView)
         NSLayoutConstraint.activate([
             contentVStackView.leadingAnchor.constraint(equalTo: artWorkImageView.trailingAnchor, constant: spacingBetweenImageAndContent),
-            contentVStackView.topAnchor.constraint(equalTo: topAnchor, constant: contentVerticalPadding),
-            contentVStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -contentVerticalPadding),
+            contentVStackView.topAnchor.constraint(equalTo: cellContentView.topAnchor, constant: contentVerticalPadding),
+            contentVStackView.bottomAnchor.constraint(equalTo: cellContentView.bottomAnchor, constant: -contentVerticalPadding),
             contentVStackView.trailingAnchor.constraint(equalTo: forwardButton.leadingAnchor, constant: -contentHorizontalPadding)
         ])
         
@@ -95,11 +108,11 @@ class SongfInfoCell: UITableViewCell{
         contentVStackView.addArrangedSubview(trackNameLabel)
     }
     
-    public func configureCell(song: Result){
+    public func configureCell(song: SoundPlay){
         self.song = song
         artistNameLabel.text = song.artistName
         trackNameLabel.text = song.trackName
-        if let urlStr = song.artworkUrl100, let url = URL.init(string: urlStr){
+        if let urlStr = song.albumImage, let url = URL.init(string: urlStr){
             artWorkImageView.kf.setImage(with: url)
         }
     }

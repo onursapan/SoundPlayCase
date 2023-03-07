@@ -35,6 +35,9 @@
 		9D50AB7C29B7B2A40014123A /* ArtistDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D50AB7B29B7B2A40014123A /* ArtistDetailCell.swift */; };
 		9D50AB7E29B7DA170014123A /* ArtistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D50AB7D29B7DA170014123A /* ArtistCell.swift */; };
 		9D50AB8029B7E6230014123A /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D50AB7F29B7E6230014123A /* ResultCell.swift */; };
+		98A72F5329B7AA4D00DAFEF0 /* SoundPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5229B7AA4D00DAFEF0 /* SoundPlay.swift */; };
+		98A72F5529B7AB7400DAFEF0 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5429B7AB7400DAFEF0 /* CoreDataStack.swift */; };
+		98A72F5729B7AEEC00DAFEF0 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A72F5629B7AEEC00DAFEF0 /* DataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		9D50AB7B29B7B2A40014123A /* ArtistDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailCell.swift; sourceTree = "<group>"; };
 		9D50AB7D29B7DA170014123A /* ArtistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistCell.swift; sourceTree = "<group>"; };
 		9D50AB7F29B7E6230014123A /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		98A72F5229B7AA4D00DAFEF0 /* SoundPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlay.swift; sourceTree = "<group>"; };
+		98A72F5429B7AB7400DAFEF0 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		98A72F5629B7AEEC00DAFEF0 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,8 +143,9 @@
 		986A270529B774A3006DDDA6 /* SoundPlay */ = {
 			isa = PBXGroup;
 			children = (
-				986A270129B77494006DDDA6 /* SoundPlay+CoreDataClass.swift */,
-				986A270229B77494006DDDA6 /* SoundPlay+CoreDataProperties.swift */,
+				98A72F5229B7AA4D00DAFEF0 /* SoundPlay.swift */,
+				98A72F5429B7AB7400DAFEF0 /* CoreDataStack.swift */,
+				98A72F5629B7AEEC00DAFEF0 /* DataProvider.swift */,
 			);
 			path = SoundPlay;
 			sourceTree = "<group>";
@@ -410,6 +417,7 @@
 				986D3E5229B33F0500AE5B92 /* HomeViewController.swift in Sources */,
 				986D3E8B29B3465000AE5B92 /* AuthManager.swift in Sources */,
 				986D3E9329B3470A00AE5B92 /* UserProfile.swift in Sources */,
+				98A72F5729B7AEEC00DAFEF0 /* DataProvider.swift in Sources */,
 				986D3E9129B346FF00AE5B92 /* Playlist.swift in Sources */,
 				9D50AB8029B7E6230014123A /* ResultCell.swift in Sources */,
 				986D3E5829B33F0500AE5B92 /* SoundPlayCase.xcdatamodeld in Sources */,
@@ -417,18 +425,18 @@
 				986D3E4E29B33F0500AE5B92 /* AppDelegate.swift in Sources */,
 				9D50AB7E29B7DA170014123A /* ArtistCell.swift in Sources */,
 				986D3E8F29B346E900AE5B92 /* Artist.swift in Sources */,
-				986A270429B77494006DDDA6 /* SoundPlay+CoreDataProperties.swift in Sources */,
 				986D3E8929B3455400AE5B92 /* TabBarViewController.swift in Sources */,
 				9842C0E029B738C100B31901 /* ForwardButtonDelegate.swift in Sources */,
 				9D50AB7C29B7B2A40014123A /* ArtistDetailCell.swift in Sources */,
 				9842C0D429B6851B00B31901 /* HomeViewModel.swift in Sources */,
+				98A72F5329B7AA4D00DAFEF0 /* SoundPlay.swift in Sources */,
 				9842C0DB29B7365E00B31901 /* SongfInfoCell.swift in Sources */,
 				986D3E9929B3491000AE5B92 /* ArtistDetailViewController.swift in Sources */,
+				98A72F5529B7AB7400DAFEF0 /* CoreDataStack.swift in Sources */,
 				986D3E5029B33F0500AE5B92 /* SceneDelegate.swift in Sources */,
 				986D3E9529B348CD00AE5B92 /* ResultViewController.swift in Sources */,
 				986D3E9729B348FF00AE5B92 /* ArtistViewController.swift in Sources */,
 				9842C0DD29B7378500B31901 /* ForwardButton.swift in Sources */,
-				986A270329B77494006DDDA6 /* SoundPlay+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
