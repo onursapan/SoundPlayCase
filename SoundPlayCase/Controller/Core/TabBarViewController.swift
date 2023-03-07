@@ -13,7 +13,7 @@ class TabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         setupTabBar()
-        
+        navigationItem.titleView = makeNavigationBar()
     }
 
 }
@@ -61,3 +61,34 @@ extension TabBarViewController {
     }
 }
 
+extension TabBarViewController {
+    func makeNavigationBar() -> UIView {
+        lazy var logoImageView: UIImageView = {
+            let imageView = UIImageView()
+            let image = UIImage(systemName: "camera.macro.circle.fill")
+            imageView.image = image
+            imageView.contentMode = .scaleAspectFit
+            imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+            imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+            return imageView
+        }()
+        
+        lazy var spacer: UIView = {
+            let spacer = UIView()
+            let constraint = spacer.widthAnchor.constraint(greaterThanOrEqualToConstant: CGFloat.greatestFiniteMagnitude)
+            constraint.isActive = true
+            constraint.priority = .defaultLow
+            return spacer
+        }()
+        
+        let stackView = UIStackView()
+        stackView.backgroundColor = .lightGray
+        stackView.axis = .horizontal
+        stackView.alignment = .fill
+        stackView.distribution = .equalSpacing
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.addArrangedSubview(logoImageView)
+        stackView.addArrangedSubview(spacer)
+        return stackView
+    }
+}
