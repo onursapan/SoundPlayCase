@@ -59,7 +59,7 @@ class ArtistDetailCell: UICollectionViewCell{
     private lazy var deleteButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-   //     button.setImage(UIImage(named: "arrowshape.turn.up.forward.fill"), for: .normal)
+        button.setImage(UIImage(named: "minus.circle"), for: .normal)
         button.backgroundColor = UIColor.darkGray
         return button
     }()
@@ -129,18 +129,6 @@ class ArtistDetailCell: UICollectionViewCell{
             contentVStackView.bottomAnchor.constraint(equalTo: forwardButton.topAnchor, constant: -contentVerticalPadding),
             contentVStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -contentHorizontalPadding)
         ])
-
-        
-
-        artistNameLabel.text = "asdsadasdasda"
-        trackNameLabel.text = "asdsadasdasda"
-        releaseTrackDateLabel.text = "asdsadasdasda"
-        trackPriceLabel.text = "asdsadasdasda"
-      //  let url = URL.init(string: "https://www.google.com/search?q=k%C3%B6pek&sxsrf=AJOqlzXq4i8o-IDm36BAZSSmCzNEz9ck0Q:1678220581645&source=lnms&tbm=isch&sa=X&ved=2ahUKEwigqf7s0sr9AhXBR_EDHfgHA7MQ_AUoAXoECAMQAw&biw=1728&bih=940&dpr=1#imgrc=i_ivSX6IZRc-LM")
-        let url = URL(string: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fgazeteoksijen.com%2Fdunya%2Fhollanda-genetik-olarak-saglik-sorunlari-olan-kopek-ve-kedileri-yasaklayacak-168919&psig=AOvVaw0YmJ6p3tc6E4xQt9H9d7S9&ust=1678306984186000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCICojPDSyv0CFQAAAAAdAAAAABAS")
-       // artWorkImageView.kf.setImage(with: url)
-
-
         
         contentVStackView.addArrangedSubview(artistNameLabel)
         contentVStackView.addArrangedSubview(trackNameLabel)

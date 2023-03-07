@@ -12,6 +12,7 @@ class ResultViewController: BaseViewController<HomeViewModel> {
     private lazy var trackCountResultLabel: UILabel = {
         let label = UILabel.init()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 16.0)
         return label
     }()
@@ -34,6 +35,7 @@ class ResultViewController: BaseViewController<HomeViewModel> {
     private let pageInfoTitleTopSpace: CGFloat = 10.0
     private let tableViewContentPadding: CGFloat = 8.0
     private let resultLabelTopSpace: CGFloat = 16.0
+    private let resultLabeLeadingSpace: CGFloat = 10.0
     private let indicatorSize: CGFloat = 20.0
     
     override func viewDidLoad() {
@@ -52,7 +54,8 @@ class ResultViewController: BaseViewController<HomeViewModel> {
         
         
         NSLayoutConstraint.activate([
-            trackCountResultLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: resultLabelTopSpace),
+            trackCountResultLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: resultLabelTopSpace),
+            trackCountResultLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: resultLabeLeadingSpace),
             
             
             artistTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: tableViewContentPadding),
